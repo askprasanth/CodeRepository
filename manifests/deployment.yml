@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tripinsightstripviewer 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tripinsightstripviewer
+  template:
+    metadata:
+      labels:
+        app: tripinsightstripviewer 
+    spec:
+      containers:
+        - name: tripinsightstripviewer 
+          image: registrygav1240.azurecr.io/tripinsightstripviewer
+          ports:
+          - containerPort: 80
